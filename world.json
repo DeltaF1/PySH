@@ -1,0 +1,30 @@
+{
+	"data":{
+		"motd":"Welcome to a PySH mud!",
+		"spawn":1
+	},
+	"items":{
+
+	},
+	"rooms":{
+		"1":{
+            "desc": "Whitewashed walls and smooth glass make up this huge space. Parcels of code whiz by, en route to distant directories.", 
+            "events": {}, 
+            "exits": {}, 
+            "items": [], 
+            "messages": {
+                "enter": {
+                    "default": "{player} enters from the {dir}"
+                }, 
+                "exit": {
+                    "default": "{player} leaves to the {dir}"
+                }
+            }, 
+            "name": "The Repo"
+        }
+
+		
+	},
+	"login":{}
+
+}

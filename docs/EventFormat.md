@@ -8,18 +8,20 @@ Each <i>EventEntity</i> has a dictionary of events, indexed by <i>trigger</i>. S
 <h2>Basic Structure</h2>
 ````json
 {
-"verb":"display", #Action to be taken
+"verb":"display",
 "data":{     
-		"text":"Test!" #Additional data for the event
+		"text":"Test!"
 	},
-"target":"user", #The object this event acting upon
-"destroy":false #Whether this event should self destruct once fired
+"target":"user",
+"destroy":false 
 }
 ````
 
 <h3>Verb</h3>
 The verb is what action the event should be doing. The verbs currently supported are:
--Display : Send text
--Trigger : Trigger another event
--Create  : Spawn a copy of an Item
--Teleport: Moves an entity, either in a direction, or to a specific room 
+<ul>
+	<li>Display : Send text</li>
+	<li>rigger : Trigger another event</li>
+	<li>Create  : Spawn a copy of an Item</li>
+	<li>Teleport: Moves an entity, either in a direction, or to a specific room</li>
+</ul>

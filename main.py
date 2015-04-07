@@ -6,6 +6,7 @@ import copy
 
 import hashlib
 import json
+import re
 
 from threading import Thread
 from Queue import Queue
@@ -55,6 +56,12 @@ for dir1, dir2 in olddirections.iteritems():
 
 directions["void"]="void"
 
+#From Javier @ stackoverflow.com
+def num(s):
+    try:
+        return int(s)
+    except ValueError:
+        return float(s)
 
 #From Martijn Pieters @ stackoverflow.com
 def getFromDict(dataDict, mapList):
@@ -182,6 +189,84 @@ def parseEvent(value):
 
 	return value
 
+def parseEvent(line):
+	if isinstance(line, basestring):
+		
+		match = re.search(r"r(.?)\{(.*?)\}", line)
+
+		if not match:
+			print("no matches found in (%s), going back up the stack"%line)
+			return line
+
+		first, last = match.span()
+
+		form = match.group(1)
+		body = match.group(2)
+
+		if body[0] == "[":
+			body = body[1:-1]
+			print("Stripped body to",body)
+
+			items = body.split(";")
+			choice = random.choice(items)
+			try:
+				if form == "i":
+					choice = int(choice)
+				elif form == "f":
+					choice = float(choice)
+			except ValueError:
+				#Someone put an invalid string into the list!
+				pass
+			new = choice
+
+		elif form == "%":
+			
+			if "/" in body:
+				dividend, divsor = body.split("/")
+				dividend, divisor = float(dividend), float(divisor)
+				chance = dividend/divisor
+			else:
+				chance = float(body)
+
+
+			new = randomPercent(chance)
+		elif ":" in body:
+
+			min, max = body.split(":")
+
+			if min > max:
+				temp = max
+				min = max
+				max = temp
+			
+			if form == "f":
+				new = random.uniform(float(min), float(max))
+			else:
+				new = random.randrange(int(min), int(max))
+
+
+		if line != match.group(0):
+			#There's more than this random string, convert result to string
+			new = str(new)
+			part1 = line[:first]
+			part2 = line[last:]
+			newLine = part1+new+part2
+			print("newLine = ",newLine)
+		else:
+			newLine = new
+			return newLine
+
+		return parseEvent(newLine)
+	else:
+		#It's not a string, move on!
+		return line
+
+
+
+
+
+
+
 class EventEntity(object):
 	def __init__(self, events = {}):
 		self.events = events
@@ -225,6 +310,9 @@ class EventEntity(object):
 				print("Old-e = "+str(e))
 				e=recurseDict(e, parseEvent)
 				print("New-e = "+str(e))
+
+				if "fire" in e:
+					if not e["fire"]:continue
 
 				f = getattr(self, "do_"+e["verb"])
 				if "time" in e:
@@ -370,11 +458,14 @@ class Room(EventEntity):
 			"enter":
 				{
 					"default":"{player} enters from the {dir}",
-					"up":"{player} enter from above"
+					"up":"{player} enters from above",
+					"down":"{player} enter from below"
 				},
 			"exit":
 				{
-					"default":"{player} leaves to the {dir}"
+					"default":"{player} leaves to the {dir}",
+					"up":"{player} ascends",
+					"down":"{player} descends"
 				}
 			}
 		

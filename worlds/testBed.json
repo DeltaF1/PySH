@@ -1,0 +1,1594 @@
+{
+    "data": {
+        "motd": "Welcome to The Test-Bed!\r\n \r\nEverything here is in an alpha state. This world will be gone/severely changed once the game enters beta.\r\n", 
+        "spawn": 6
+    }, 
+    "items": {
+        "0": {
+            "aliases": [
+                "garlic", 
+                "tupperware"
+            ], 
+            "desc": "A small blue tupperware container, filled to the brim with chopped garlic pieces.", 
+            "events": {
+                "aliases": {
+                    "use": [
+                        "open"
+                    ]
+                }, 
+                "use": [
+                    {
+                        "data": {
+                            "text": "With a soft hiss, the container opens. The reek of garlic fills the room."
+                        }, 
+                        "destroy": false, 
+                        "target": "room", 
+                        "verb": "display"
+                    }
+                ]
+            }, 
+            "id": 0, 
+            "messages": {
+                "rooted": "It's rooted to the spot!", 
+                "use": "You use the {0}.", 
+                "useTarget": "You use the {0} on {1}."
+            }, 
+            "name": "Container", 
+            "rooted": 0
+        }, 
+        "1": {
+            "aliases": [], 
+            "desc": "A yellow rod with the InTech logo supports a head of nano-fibre bristles.", 
+            "events": {}, 
+            "id": 1, 
+            "messages": {
+                "rooted": "It's rooted to the spot!"
+            }, 
+            "name": "broom", 
+            "rooted": 0
+        }, 
+        "10": {
+            "aliases": [], 
+            "desc": "A circular surface, with stacks of paper and floating tele-viewers all around it. Here is where you sign into the station.", 
+            "events": {}, 
+            "id": 10, 
+            "messages": {
+                "rooted": "It's bolted to the floor.", 
+                "use": "You use the {0}.", 
+                "useTarget": "You use the {0} on {1}."
+            }, 
+            "name": "Desk", 
+            "rooted": 1
+        }, 
+        "11": {
+            "aliases": [
+                "yamaha"
+            ], 
+            "desc": "A Yamaha acoustic guitar.", 
+            "events": {}, 
+            "id": 11, 
+            "messages": {
+                "rooted": "It's rooted to the spot!", 
+                "use": "You use the {0}.", 
+                "useTarget": "You use the {0} on {1}."
+            }, 
+            "name": "Guitar", 
+            "rooted": 0
+        }, 
+        "12": {
+            "aliases": [
+                "screen", 
+                "holographic", 
+                "holograms", 
+                "monitors", 
+                "tele-viewers"
+            ], 
+            "desc": "A bank of holographic projections, displaying information on the people walking through the checkpoint.", 
+            "events": {}, 
+            "id": 12, 
+            "messages": {
+                "rooted": "Your hand passes through the projected display.", 
+                "use": "You use the {0}.", 
+                "useTarget": "You use the {0} on {1}."
+            }, 
+            "name": "screens", 
+            "rooted": 1
+        }, 
+        "13": {
+            "aliases": [
+                "darnkess", 
+                "mass", 
+                "swirling", 
+                "darkness"
+            ], 
+            "desc": "A looming mass of darkness, that you can't seem to focus on.", 
+            "events": {
+                "aliases": {
+                    "use": [
+                        "enter"
+                    ]
+                }, 
+                "use": [
+                    {
+                        "data": {
+                            "destination": 7
+                        }, 
+                        "destroy": 0, 
+                        "target": "user", 
+                        "time": 150, 
+                        "verb": "teleport"
+                    }, 
+                    {
+                        "data": {
+                            "text": "As you approach the portal, you feel your skin tingle. Some force is pulling you towards the blackness, a force that you cannot resist."
+                        }, 
+                        "destroy": 0, 
+                        "target": "user", 
+                        "verb": "display"
+                    }, 
+                    {
+                        "data": {
+                            "text": "{0} approaches the swirling mass on the wall, seemingly entranced. They step through the portal, and vanish. The acrid smell of brimstone is left behind."
+                        }, 
+                        "destroy": 0, 
+                        "target": "roomEx", 
+                        "verb": "display"
+                    }
+                ]
+            }, 
+            "id": 13, 
+            "messages": {
+                "rooted": "It's rooted to the spot!", 
+                "use": "You use the {0}.", 
+                "useTarget": "You use the {0} on {1}."
+            }, 
+            "name": "Portal", 
+            "rooted": 1
+        }, 
+        "14": {
+            "aliases": [], 
+            "desc": "A child's doll, clumsily stiched together out of sackcloth and lace.", 
+            "events": {
+                "get": [
+                    {
+                        "data": {
+                            "text": "The doll appears to smile at you as you pick it up. Eerie."
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "verb": "display"
+                    }
+                ]
+            }, 
+            "id": 14, 
+            "messages": {
+                "rooted": "It's rooted to the spot!", 
+                "use": "You use the {0}.", 
+                "useTarget": "You use the {0} on {1}."
+            }, 
+            "name": "Doll", 
+            "rooted": 0
+        }, 
+        "15": {
+            "aliases": [
+                "hash", 
+                "joint", 
+                "dooby", 
+                "weed", 
+                "mj", 
+                "mary-jane"
+            ], 
+            "desc": "A crmupled piece of of paper, reeking of cannabis.", 
+            "events": {
+                "use": [
+                    {
+                        "data": {
+                            "text": "You take a puff"
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "verb": "display"
+                    }, 
+                    {
+                        "data": {
+                            "text": "{0} takes a puff"
+                        }, 
+                        "destroy": false, 
+                        "target": "roomEx", 
+                        "verb": "display"
+                    }
+                ]
+            }, 
+            "id": 15, 
+            "messages": {
+                "rooted": "It's rooted to the spot!"
+            }, 
+            "name": "Marijuana", 
+            "rooted": 0
+        }, 
+        "16": {
+            "aliases": [
+                "hash", 
+                "joint", 
+                "dooby", 
+                "weed", 
+                "mj", 
+                "mary-jane"
+            ], 
+            "desc": "A crmupled piece of of paper, reeking of cannabis.", 
+            "events": {
+                "use": [
+                    {
+                        "data": {
+                            "text": "You take a puff"
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "verb": "display"
+                    }, 
+                    {
+                        "data": {
+                            "text": "{0} takes a puff"
+                        }, 
+                        "destroy": false, 
+                        "target": "roomEx", 
+                        "verb": "display"
+                    }
+                ]
+            }, 
+            "id": 16, 
+            "messages": {
+                "rooted": "It's rooted to the spot!"
+            }, 
+            "name": "Marijuana", 
+            "rooted": 0
+        }, 
+        "17": {
+            "aliases": [
+                "hash", 
+                "joint", 
+                "dooby", 
+                "weed", 
+                "mj", 
+                "mary-jane"
+            ], 
+            "desc": "A crmupled piece of of paper, reeking of cannabis.", 
+            "events": {
+                "use": [
+                    {
+                        "data": {
+                            "text": "You take a puff"
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "verb": "display"
+                    }, 
+                    {
+                        "data": {
+                            "text": "{0} takes a puff"
+                        }, 
+                        "destroy": false, 
+                        "target": "roomEx", 
+                        "verb": "display"
+                    }
+                ]
+            }, 
+            "id": 17, 
+            "messages": {
+                "rooted": "It's rooted to the spot!"
+            }, 
+            "name": "Marijuana", 
+            "rooted": 0
+        }, 
+        "18": {
+            "aliases": [
+                "hash", 
+                "joint", 
+                "dooby", 
+                "weed", 
+                "mj", 
+                "mary-jane"
+            ], 
+            "desc": "A crmupled piece of of paper, reeking of cannabis.", 
+            "events": {
+                "use": [
+                    {
+                        "data": {
+                            "text": "You take a puff"
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "verb": "display"
+                    }, 
+                    {
+                        "data": {
+                            "text": "{0} takes a puff"
+                        }, 
+                        "destroy": false, 
+                        "target": "roomEx", 
+                        "verb": "display"
+                    }
+                ]
+            }, 
+            "id": 18, 
+            "messages": {
+                "rooted": "It's rooted to the spot!"
+            }, 
+            "name": "Marijuana", 
+            "rooted": 0
+        }, 
+        "19": {
+            "aliases": [
+                "hash", 
+                "joint", 
+                "dooby", 
+                "weed", 
+                "mj", 
+                "mary-jane"
+            ], 
+            "desc": "A crmupled piece of of paper, reeking of cannabis.", 
+            "events": {
+                "use": [
+                    {
+                        "data": {
+                            "text": "You take a puff"
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "verb": "display"
+                    }, 
+                    {
+                        "data": {
+                            "text": "{0} takes a puff"
+                        }, 
+                        "destroy": false, 
+                        "target": "roomEx", 
+                        "verb": "display"
+                    }
+                ]
+            }, 
+            "id": 19, 
+            "messages": {
+                "rooted": "It's rooted to the spot!"
+            }, 
+            "name": "Marijuana", 
+            "rooted": 0
+        }, 
+        "2": {
+            "aliases": [], 
+            "desc": "What is there to say...", 
+            "events": {}, 
+            "id": 2, 
+            "messages": {
+                "rooted": "There's nothing to grab hold of..."
+            }, 
+            "name": "nothing", 
+            "rooted": 1
+        }, 
+        "20": {
+            "aliases": [], 
+            "desc": "A bowl of cracked porcelain barely contains a pool of murky water.", 
+            "events": {
+                "use": [
+                    {
+                        "data": {
+                            "text": "You do your business, trying to avoid contact with the filthy surface. Something about the handle catches your eye..."
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "verb": "display"
+                    }, 
+                    {
+                        "data": {
+                            "text": "{0} sits down gingerly on the grimy surface."
+                        }, 
+                        "destroy": false, 
+                        "target": "roomEx", 
+                        "verb": "display"
+                    }
+                ]
+            }, 
+            "id": 20, 
+            "messages": {
+                "rooted": "It's rooted to the spot!", 
+                "use": "You use the {0}.", 
+                "useTarget": "You use the {0} on {1}."
+            }, 
+            "name": "toilet", 
+            "rooted": 1
+        }, 
+        "21": {
+            "aliases": [], 
+            "desc": "The stained aluminum handle, long since dicsonnected from the flushing mechanism, seems to hum with power.", 
+            "events": {
+                "use": [
+                    {
+                        "data": {
+                            "destination": 4, 
+                            "text": "An item was used!"
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "time": 450, 
+                        "verb": "teleport"
+                    }, 
+                    {
+                        "data": {
+                            "text": "As you grab the handle, your hand seems to fuse to the metal. The humming increases in pitch, and your vision begins to dim."
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "verb": "display"
+                    }, 
+                    {
+                        "data": {
+                            "text": "..."
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "time": 150, 
+                        "verb": "display"
+                    }, 
+                    {
+                        "data": {
+                            "text": "..."
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "time": 300, 
+                        "verb": "display"
+                    }
+                ]
+            }, 
+            "id": 21, 
+            "messages": {
+                "rooted": "It's rooted to the spot!", 
+                "use": "You use the {0}.", 
+                "useTarget": "You use the {0} on {1}."
+            }, 
+            "name": "handle", 
+            "rooted": 1
+        }, 
+        "22": {
+            "aliases": [
+                "hash", 
+                "joint", 
+                "dooby", 
+                "weed", 
+                "mj", 
+                "mary-jane"
+            ], 
+            "desc": "A crmupled piece of of paper, reeking of cannabis.", 
+            "events": {
+                "use": [
+                    {
+                        "data": {
+                            "text": "You take a puff"
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "verb": "display"
+                    }, 
+                    {
+                        "data": {
+                            "text": "{0} takes a puff"
+                        }, 
+                        "destroy": false, 
+                        "target": "roomEx", 
+                        "verb": "display"
+                    }
+                ]
+            }, 
+            "id": 22, 
+            "messages": {
+                "rooted": "It's rooted to the spot!"
+            }, 
+            "name": "Marijuana", 
+            "rooted": 0
+        }, 
+        "23": {
+            "aliases": [], 
+            "desc": "Worse than joey's.", 
+            "events": {
+                "use": [
+                    {
+                        "data": {
+                            "text": "You sweep furiously."
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "verb": "display"
+                    }, 
+                    {
+                        "data": {
+                            "text": "{0} sweeps furiously."
+                        }, 
+                        "destroy": false, 
+                        "target": "roomEx", 
+                        "verb": "display"
+                    }
+                ]
+            }, 
+            "id": 23, 
+            "messages": {
+                "rooted": "It's rooted to the spot!", 
+                "use": "You use the {0}.", 
+                "useTarget": "You use the {0} on {1}."
+            }, 
+            "name": "broom", 
+            "rooted": 1
+        }, 
+        "24": {
+            "aliases": [
+                "laptop", 
+                "mac"
+            ], 
+            "desc": "A flimsy piece of garbage, it sags underneath the weight of unmarked papers.A shiny macbook sits amongst the clutter.", 
+            "events": {}, 
+            "id": 24, 
+            "messages": {
+                "rooted": "It's rooted to the spot!", 
+                "use": "You use the {0}.", 
+                "useTarget": "You use the {0} on {1}."
+            }, 
+            "name": "desk", 
+            "rooted": 1
+        }, 
+        "25": {
+            "aliases": [
+                "laptop", 
+                "mac"
+            ], 
+            "desc": "Shiny aluminum, glowing LEDs, all come together in this marvel of modern engineering.", 
+            "events": {}, 
+            "id": 25, 
+            "messages": {
+                "rooted": "It's rooted to the spot!", 
+                "use": "You use the {0}.", 
+                "useTarget": "You use the {0} on {1}."
+            }, 
+            "name": "macbook", 
+            "rooted": 0
+        }, 
+        "26": {
+            "aliases": [
+                "hash", 
+                "joint", 
+                "dooby", 
+                "weed", 
+                "mj", 
+                "mary-jane"
+            ], 
+            "desc": "A crmupled piece of of paper, reeking of cannabis.", 
+            "events": {
+                "use": [
+                    {
+                        "data": {
+                            "text": "You take a puff"
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "verb": "display"
+                    }, 
+                    {
+                        "data": {
+                            "text": "{0} takes a puff"
+                        }, 
+                        "destroy": false, 
+                        "target": "roomEx", 
+                        "verb": "display"
+                    }
+                ]
+            }, 
+            "id": 26, 
+            "messages": {
+                "rooted": "It's rooted to the spot!"
+            }, 
+            "name": "Marijuana", 
+            "rooted": 0
+        }, 
+        "27": {
+            "aliases": [
+                "aunt", 
+                "jemimah", 
+                "pot"
+            ], 
+            "desc": "Steaming goodness man...", 
+            "events": {
+                "use": [
+                    {
+                        "data": {
+                            "text": "You take a bite. Woooah..."
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "verb": "display"
+                    }, 
+                    {
+                        "data": {
+                            "text": "{0} takes a bite of a brownie. They zone out..."
+                        }, 
+                        "destroy": false, 
+                        "target": "roomEx", 
+                        "verb": "display"
+                    }
+                ]
+            }, 
+            "id": 27, 
+            "messages": {
+                "rooted": "It's rooted to the spot!", 
+                "use": "You use the {0}.", 
+                "useTarget": "You use the {0} on {1}."
+            }, 
+            "name": "Brownies", 
+            "rooted": 1
+        }, 
+        "28": {
+            "aliases": [], 
+            "desc": "The hustle and bustle of people making their way through a crowded space", 
+            "events": {
+                "loop": [
+                    {
+                        "data": {
+                            "text": "r{[You're jostled by the crowd as a group of students arrives.;You hear someone in the crowd burst into laughter as their friend materializes.;The volume in the room intensifies as the line to customs comes to a temporary standstill.]}"
+                        }, 
+                        "destroy": false, 
+                        "target": "room", 
+                        "verb": "display"
+                    }, 
+                    {
+                        "data": {
+                            "entity": "self", 
+                            "trigger": "loop"
+                        }, 
+                        "destroy": false, 
+                        "target": "self", 
+                        "time": "ri{3000:6000}", 
+                        "verb": "trigger"
+                    }
+                ], 
+                "start": [
+                    {
+                        "data": {
+                            "entity": "self", 
+                            "trigger": "loop"
+                        }, 
+                        "destroy": false, 
+                        "target": "self", 
+                        "verb": "trigger"
+                    }
+                ]
+            }, 
+            "id": 28, 
+            "messages": {
+                "rooted": "It's rooted to the spot!", 
+                "use": "You use the {0}.", 
+                "useTarget": "You use the {0} on {1}."
+            }, 
+            "name": "_chatter", 
+            "rooted": 1
+        }, 
+        "29": {
+            "aliases": [], 
+            "desc": "An intricately carved cube of bone, with pips on each of its six sides.", 
+            "events": {
+                "use": [
+                    {
+                        "data": {
+                            "text": "r{[The cube falls out of your grasp and lands with a thud.;You roll the die.;The cube gows brightly, and for a moment all of the sides read]} ri{1:6}"
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "verb": "display"
+                    }
+                ]
+            }, 
+            "id": 29, 
+            "messages": {
+                "rooted": "It's rooted to the spot!", 
+                "use": "You use the {0}.", 
+                "useTarget": "You use the {0} on {1}."
+            }, 
+            "name": "Die", 
+            "rooted": 0
+        }, 
+        "3": {
+            "aliases": [
+                "toilet", 
+                "disposal", 
+                "waste"
+            ], 
+            "desc": "Shiny stainless steel curves rise up to a white plasteel seat. ", 
+            "events": {
+                "use": [
+                    {
+                        "data": {
+                            "text": "You do your business as quickly as possible."
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "verb": "display"
+                    }, 
+                    {
+                        "data": {
+                            "text": "{0} pulls down their pants, and relieves themself in the Waste Disposal Unit."
+                        }, 
+                        "destroy": false, 
+                        "target": "roomEx", 
+                        "verb": "display"
+                    }
+                ]
+            }, 
+            "id": 3, 
+            "messages": {
+                "rooted": "It's rooted to the spot!"
+            }, 
+            "name": "Waste Disposal Unit", 
+            "rooted": 1
+        }, 
+        "30": {
+            "aliases": [
+                "hash", 
+                "joint", 
+                "dooby", 
+                "weed", 
+                "mj", 
+                "mary-jane"
+            ], 
+            "desc": "A crmupled piece of of paper, reeking of cannabis.", 
+            "events": {
+                "use": [
+                    {
+                        "data": {
+                            "text": "You take a puff"
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "verb": "display"
+                    }, 
+                    {
+                        "data": {
+                            "text": "{0} takes a puff"
+                        }, 
+                        "destroy": false, 
+                        "target": "roomEx", 
+                        "verb": "display"
+                    }
+                ]
+            }, 
+            "id": 30, 
+            "messages": {
+                "rooted": "It's rooted to the spot!"
+            }, 
+            "name": "Marijuana", 
+            "rooted": 0
+        }, 
+        "31": {
+            "aliases": [
+                "hash", 
+                "joint", 
+                "dooby", 
+                "weed", 
+                "mj", 
+                "mary-jane"
+            ], 
+            "desc": "A crmupled piece of of paper, reeking of cannabis.", 
+            "events": {
+                "use": [
+                    {
+                        "data": {
+                            "text": "You take a puff"
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "verb": "display"
+                    }, 
+                    {
+                        "data": {
+                            "text": "{0} takes a puff"
+                        }, 
+                        "destroy": false, 
+                        "target": "roomEx", 
+                        "verb": "display"
+                    }
+                ]
+            }, 
+            "id": 31, 
+            "messages": {
+                "rooted": "It's rooted to the spot!"
+            }, 
+            "name": "Marijuana", 
+            "rooted": 0
+        }, 
+        "32": {
+            "aliases": [], 
+            "desc": "It's... a thing...", 
+            "events": {
+                "use": [
+                    {
+                        "data": {
+                            "text": "You knead the wax."
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "verb": "display"
+                    }, 
+                    {
+                        "data": {
+                            "text": "{0} kneads a small ball of wax."
+                        }, 
+                        "destroy": false, 
+                        "target": "roomEx", 
+                        "verb": "display"
+                    }
+                ]
+            }, 
+            "id": 32, 
+            "messages": {
+                "rooted": "It's rooted to the spot!", 
+                "use": "You use the {0}.", 
+                "useTarget": "You use the {0} on {1}."
+            }, 
+            "name": "Wax", 
+            "rooted": 0
+        }, 
+        "4": {
+            "aliases": [], 
+            "desc": "It fixes toilets.", 
+            "events": {
+                "get": [
+                    {
+                        "data": {
+                            "text": "As you pick up the plunger, you feel a rush of pride. You've done it! You can now clean toilets for the rest of your days!"
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "verb": "display"
+                    }
+                ]
+            }, 
+            "id": 4, 
+            "messages": {
+                "rooted": "It's rooted to the spot!", 
+                "use": "You use the {0}.", 
+                "useTarget": "You use the {0} on {1}."
+            }, 
+            "name": "Plunger", 
+            "rooted": 0
+        }, 
+        "5": {
+            "aliases": [], 
+            "desc": "A rusty circular manhole cover. You can make out the letters \"N W YO K CI Y S R ICES\"", 
+            "events": {
+                "aliases": {
+                    "use": [
+                        "open", 
+                        "enter"
+                    ]
+                }, 
+                "use": [
+                    {
+                        "data": {
+                            "text": "{0} wrenches open the manhole cover and slips inside. It slams shut with a heavy thud."
+                        }, 
+                        "destroy": false, 
+                        "target": "roomEx", 
+                        "verb": "display"
+                    }, 
+                    {
+                        "data": {
+                            "text": "You wrench open the manhole cover, and slip inside. Darkness surrounds you as the cover slams shut. Suddenly you fee a tingling throughout your whole body, and a bright light begins to pour out from underneath you. You shut your eyes, then open them once the light subsides. \r\n"
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "verb": "display"
+                    }, 
+                    {
+                        "data": {
+                            "destination": "down", 
+                            "quiet": true
+                        }, 
+                        "destroy": false, 
+                        "time": 100, 
+                        "verb": "teleport"
+                    }
+                ]
+            }, 
+            "id": 5, 
+            "messages": {
+                "rooted": "It's rooted to the spot!"
+            }, 
+            "name": "Manhole", 
+            "rooted": 1
+        }, 
+        "6": {
+            "aliases": [
+                "test", 
+                "math", 
+                "calculus"
+            ], 
+            "desc": "An innocent piece of paper.", 
+            "events": {
+                "get": [
+                    {
+                        "data": {
+                            "text": "You feel the weight of the world settle onto your shoulders..."
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "verb": "display"
+                    }
+                ]
+            }, 
+            "id": 6, 
+            "messages": {
+                "rooted": "It's rooted to the spot!"
+            }, 
+            "name": "Calculus Test", 
+            "rooted": 0
+        }, 
+        "7": {
+            "aliases": [], 
+            "desc": "A big red button labelled 'TEST'", 
+            "events": {
+                "use": [
+                    {
+                        "data": {
+                            "entity": "user", 
+                            "trigger": "test"
+                        }, 
+                        "destroy": false, 
+                        "target": 8, 
+                        "time": 500, 
+                        "verb": "trigger"
+                    }
+                ]
+            }, 
+            "id": 7, 
+            "messages": {
+                "rooted": "It's rooted to the spot!", 
+                "use": "You use the {0}.", 
+                "useTarget": "You use the {0} on {1}."
+            }, 
+            "name": "Button", 
+            "rooted": 1
+        }, 
+        "8": {
+            "aliases": [
+                "speaker"
+            ], 
+            "desc": "An old-fashioned loudspeaker, fastened to a bracket on the wall.", 
+            "events": {
+                "test": [
+                    {
+                        "data": {
+                            "text": "*The loudspeaker crackles* ALL DECKS, ALL STATIONS, RED ALERT"
+                        }, 
+                        "destroy": false, 
+                        "target": "room", 
+                        "verb": "display"
+                    }
+                ]
+            }, 
+            "id": 8, 
+            "messages": {
+                "rooted": "It's rooted to the spot!", 
+                "use": "You use the {0}.", 
+                "useTarget": "You use the {0} on {1}."
+            }, 
+            "name": "Loudspeaker", 
+            "rooted": 1
+        }, 
+        "9": {
+            "aliases": [
+                "clock"
+            ], 
+            "desc": "A massive whirring mess of gears and pendulums, the clock floats gently in the air above the transporter pods.", 
+            "events": {
+                "chime": [
+                    {
+                        "data": {
+                            "text": "The great clock produces a dull roar as its many intricate pieces click into place, and an useen bell tolls, marking the hour."
+                        }, 
+                        "destroy": false, 
+                        "target": "room", 
+                        "verb": "display"
+                    }, 
+                    {
+                        "data": {
+                            "entity": "target", 
+                            "trigger": "chime"
+                        }, 
+                        "destroy": false, 
+                        "target": "self", 
+                        "time": 360000, 
+                        "verb": "trigger"
+                    }
+                ], 
+                "start": [
+                    {
+                        "data": {
+                            "entity": "target", 
+                            "trigger": "chime"
+                        }, 
+                        "destroy": false, 
+                        "target": "self", 
+                        "verb": "trigger"
+                    }
+                ]
+            }, 
+            "id": 9, 
+            "messages": {
+                "rooted": "It's rooted to the spot!", 
+                "use": "You use the {0}.", 
+                "useTarget": "You use the {0} on {1}."
+            }, 
+            "name": "Clock", 
+            "rooted": 1
+        }
+    }, 
+    "login": {
+        "094a8d0fdd28f65f4f1ffe8cc564c45f": "Christopher", 
+        "1c0a41c7013808d381487708ff60a994": "Flower", 
+        "34ea1b66543847898614c4c3cfcac012": "God", 
+        "6db5e64efc62ae1047059d9d1aa7429a": "Mimi", 
+        "8a6fff3ed3f12506ed8a286a072f218f": "Merlin", 
+        "9ff86f71b375827ee2f4e2dc2d57e58f": "satan", 
+        "a53f4f5d4433d794be86dd5551992215": "Kevin", 
+        "a9025fb2728a9cc01e7d23b7f0107056": "Anorak", 
+        "a9fbce31ff6e2ce11ed0e5059ee5bc17": "Joseph The Sawbreaker", 
+        "cba4db50e49cf0a0acc5ceabc30fb56d": "Trogdor", 
+        "cc068fdecea5edfe6070da037b5fa812": "Dew", 
+        "d4a850b9edd9a5286abb39a5fa7793aa": "Adam", 
+        "d6fa6c81fd018c20db936e8038d4c01c": "BIGDICKLOGAR", 
+        "e6cacd539c2c16f3de96ae3764089db9": "Matt"
+    }, 
+    "players": {
+        "1": {
+            "aliases": [], 
+            "desc": "A great poofy beard and long robes obscure much of this diminutive wizard.", 
+            "events": {}, 
+            "inventory": [
+                18
+            ], 
+            "level": 2, 
+            "messages": {
+                "rooted": "{0} stares at you as you unsuccessfully attempt to grab onto them.", 
+                "standing": "is standing here."
+            }, 
+            "name": "Merlin", 
+            "npc": 0, 
+            "room": 4
+        }, 
+        "11": {
+            "aliases": [], 
+            "desc": "A marvelous creature.", 
+            "events": {}, 
+            "inventory": [
+                0, 
+                17
+            ], 
+            "level": 0, 
+            "messages": {
+                "rooted": "{0} stares at you as you unsuccessfully attempt to grab onto them.", 
+                "standing": "is staring morosely at a container of chopped garlic."
+            }, 
+            "name": "Kevin", 
+            "npc": 0, 
+            "room": 6
+        }, 
+        "12": {
+            "aliases": [
+                "Anorak"
+            ], 
+            "desc": "A plain, uninteresting person.", 
+            "events": {}, 
+            "inventory": [], 
+            "level": 0, 
+            "messages": {
+                "rooted": "{0} stares at you as you unsuccessfully attempt to grab onto them.", 
+                "standing": "is standing here."
+            }, 
+            "name": "Anorak", 
+            "npc": 0, 
+            "room": 4
+        }, 
+        "13": {
+            "aliases": [
+                "satan"
+            ], 
+            "desc": "A plain, uninteresting person.", 
+            "events": {}, 
+            "inventory": [], 
+            "level": 1, 
+            "messages": {
+                "rooted": "{0} stares at you as you unsuccessfully attempt to grab onto them.", 
+                "standing": "is standing here."
+            }, 
+            "name": "satan", 
+            "npc": 0, 
+            "room": 1
+        }, 
+        "14": {
+            "aliases": [
+                "Christopher", 
+                "chris"
+            ], 
+            "desc": "A plain, uninteresting person.", 
+            "events": {}, 
+            "inventory": [], 
+            "level": 2, 
+            "messages": {
+                "rooted": "{0} stares at you as you unsuccessfully attempt to grab onto them.", 
+                "standing": "is standing here."
+            }, 
+            "name": "Christopher", 
+            "npc": 0, 
+            "room": 1
+        }, 
+        "18": {
+            "aliases": [
+                "BIGDICKLOGAR"
+            ], 
+            "desc": "A plain, uninteresting person.", 
+            "events": {}, 
+            "inventory": [], 
+            "level": 0, 
+            "messages": {
+                "rooted": "{0} stares at you as you unsuccessfully attempt to grab onto them.", 
+                "standing": "is standing here."
+            }, 
+            "name": "BIGDICKLOGAR", 
+            "npc": 0, 
+            "room": 7
+        }, 
+        "2": {
+            "aliases": [], 
+            "desc": "A young man with close-cropped hair. He peers at you from behind thick-rimmed glasses. A Pharell hat adorns his head.", 
+            "events": {}, 
+            "inventory": [
+                11
+            ], 
+            "level": 0, 
+            "messages": {
+                "rooted": "{0} laughs uncomfortably.", 
+                "standing": "is standing here, guitar in hand."
+            }, 
+            "name": "Adam", 
+            "npc": 1, 
+            "room": 1
+        }, 
+        "23": {
+            "aliases": [
+                "Trogdor"
+            ], 
+            "desc": "A plain, uninteresting person.", 
+            "events": {
+                "enter": [
+                    {
+                        "data": {
+                            "text": "Spoop"
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "verb": "display"
+                    }
+                ]
+            }, 
+            "inventory": [
+                22
+            ], 
+            "level": 0, 
+            "messages": {
+                "rooted": "{0} stares at you as you unsuccessfully attempt to grab onto them.", 
+                "standing": "is standing here."
+            }, 
+            "name": "Trogdor", 
+            "npc": 0, 
+            "room": 1
+        }, 
+        "25": {
+            "aliases": [
+                "Dew"
+            ], 
+            "desc": "Flowing locks conceal sparkling blue eyes.", 
+            "events": {}, 
+            "inventory": [
+                26
+            ], 
+            "level": 0, 
+            "messages": {
+                "rooted": "{0} stares at you as you unsuccessfully attempt to grab onto them.", 
+                "standing": "shuffles from side to side."
+            }, 
+            "name": "Dew", 
+            "npc": 0, 
+            "room": 4
+        }, 
+        "28": {
+            "aliases": [
+                "Mimi"
+            ], 
+            "desc": "A plain, uninteresting person.", 
+            "events": {
+                "use": [
+                    {
+                        "data": {
+                            "text": "You knead the wax."
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "verb": "display"
+                    }, 
+                    {
+                        "data": {
+                            "text": "{0} kneads a small ball of wax."
+                        }, 
+                        "destroy": false, 
+                        "target": "roomEx", 
+                        "verb": "display"
+                    }
+                ]
+            }, 
+            "inventory": [
+                14, 
+                31, 
+                32
+            ], 
+            "level": 1, 
+            "messages": {
+                "rooted": "{0} stares at you as you unsuccessfully attempt to grab onto them.", 
+                "standing": "is standing here."
+            }, 
+            "name": "Mimi", 
+            "npc": 0, 
+            "room": 4
+        }, 
+        "4": {
+            "aliases": [], 
+            "desc": "An old man in white robes. His sandals float a few centimetres off the ground.", 
+            "events": {}, 
+            "inventory": [
+                4, 
+                0, 
+                10, 
+                16, 
+                29
+            ], 
+            "level": 3, 
+            "messages": {
+                "rooted": "{0} chuckles and floats a little higher. \"That tickles!\".", 
+                "standing": "is floating here."
+            }, 
+            "name": "God", 
+            "npc": 0, 
+            "room": 1
+        }, 
+        "5": {
+            "aliases": [], 
+            "desc": "A small humming dinosaur.", 
+            "events": {}, 
+            "inventory": [], 
+            "level": 1, 
+            "messages": {
+                "rooted": "{0} stares at you as you unsuccessfully attempt to grab onto them.", 
+                "standing": "is standing here."
+            }, 
+            "name": "Flower", 
+            "npc": 0, 
+            "room": 1
+        }, 
+        "7": {
+            "aliases": [], 
+            "desc": "The lankiest.", 
+            "events": {}, 
+            "inventory": [
+                6, 
+                19
+            ], 
+            "level": 0, 
+            "messages": {
+                "rooted": "{0} stares at you as you unsuccessfully attempt to grab onto them.", 
+                "standing": "is standing here."
+            }, 
+            "name": "Matt", 
+            "npc": 0, 
+            "room": 7
+        }, 
+        "9": {
+            "aliases": [
+                "joseph", 
+                "joey"
+            ], 
+            "desc": "A plain, uninteresting person.", 
+            "events": {}, 
+            "inventory": [
+                1
+            ], 
+            "level": 1, 
+            "messages": {
+                "rooted": "{0} stares at you as you unsuccessfully attempt to grab onto them.", 
+                "standing": "is sweeping intensely."
+            }, 
+            "name": "Joseph The Sawbreaker", 
+            "npc": 0, 
+            "room": 1
+        }
+    }, 
+    "rooms": {
+        "1": {
+            "desc": "A large circular space, filled with the sounds of chatter and laughter as people arrive and depart via the transporter pods. A great clock floats high above, the swinging pendulums and spinning cogs whirling around a central time-piece.\r\n \r\nTo the east a queue has formed for customs. To the south are the washrooms. To the north is a small unmarked door.", 
+            "events": {}, 
+            "exits": {
+                "down": 9, 
+                "east": 2, 
+                "north": 3, 
+                "south": 4
+            }, 
+            "items": [
+                8, 
+                9, 
+                28
+            ], 
+            "messages": {
+                "enter": {
+                    "default": "{player} enters from the {dir}", 
+                    "up": "{player} materializes in one of the transporter pods."
+                }, 
+                "exit": {
+                    "default": "{player} leaves to the {dir}"
+                }
+            }, 
+            "name": "The Atrium"
+        }, 
+        "10": {
+            "desc": "An open room, with light streaming in from above.", 
+            "events": {}, 
+            "exits": {
+                "north": 11, 
+                "west": 2
+            }, 
+            "items": [
+                23
+            ], 
+            "messages": {
+                "enter": {
+                    "default": "{player} enters from the {dir}"
+                }, 
+                "exit": {
+                    "default": "{player} leaves to the {dir}"
+                }
+            }, 
+            "name": "Foyer"
+        }, 
+        "11": {
+            "desc": "A cramped room with a small cluttered desk.", 
+            "events": {}, 
+            "exits": {
+                "south": 10
+            }, 
+            "items": [
+                24, 
+                25
+            ], 
+            "messages": {
+                "enter": {
+                    "default": "{player} enters from the {dir}"
+                }, 
+                "exit": {
+                    "default": "{player} leaves to the {dir}"
+                }
+            }, 
+            "name": "Office"
+        }, 
+        "2": {
+            "desc": "A desk with holographic screens showing your biographical information sits in the center of the room.", 
+            "events": {}, 
+            "exits": {
+                "east": 10, 
+                "west": 1
+            }, 
+            "items": [
+                10, 
+                12
+            ], 
+            "messages": {
+                "enter": {
+                    "default": "{player} enters from the {dir}"
+                }, 
+                "exit": {
+                    "default": "{player} leaves to the {dir}"
+                }
+            }, 
+            "name": "Customs"
+        }, 
+        "3": {
+            "desc": "A small closet, containing a few brooms and mops.", 
+            "events": {}, 
+            "exits": {
+                "south": 1
+            }, 
+            "items": [
+                7
+            ], 
+            "messages": {
+                "enter": {
+                    "default": "{player} enters from the {dir}"
+                }, 
+                "exit": {
+                    "default": "{player} leaves to the {dir}"
+                }
+            }, 
+            "name": "Broom Closet"
+        }, 
+        "4": {
+            "desc": "A small white room, with a solitary Waste Disposal Unit in the centre.\r\n \r\nAgainst the far wall is a swirling mass of darkness. From within you can hear the faint sounds of screaming and sobbing.", 
+            "events": {}, 
+            "exits": {
+                "north": 1
+            }, 
+            "items": [
+                3, 
+                13
+            ], 
+            "messages": {
+                "enter": {
+                    "default": "{player} enters from the {dir}"
+                }, 
+                "exit": {
+                    "default": "{player} leaves to the {dir}"
+                }
+            }, 
+            "name": "Bathroom"
+        }, 
+        "5": {
+            "desc": "A vast expanse of pure white. You feel naked and vulnerable, lost in the pure nothingness of it all.", 
+            "events": {}, 
+            "exits": {
+                "east": 6, 
+                "north": 6, 
+                "south": 6, 
+                "west": 6
+            }, 
+            "items": [
+                2
+            ], 
+            "messages": {
+                "enter": {
+                    "default": "{player} enters from the {dir}"
+                }, 
+                "exit": {
+                    "default": "{player} leaves to the {dir}"
+                }
+            }, 
+            "name": "Void"
+        }, 
+        "6": {
+            "desc": "A bright white light surrounds you. There are neither walls nor ceiling to speak of. Incongruously, there is a rusted manhole cover on the ground here.", 
+            "events": {}, 
+            "exits": {
+                "down": 1, 
+                "east": 5, 
+                "north": 5, 
+                "south": 5, 
+                "west": 5
+            }, 
+            "items": [
+                5
+            ], 
+            "messages": {
+                "enter": {
+                    "default": "{player} enters from the {dir}"
+                }, 
+                "exit": {
+                    "default": "{player} leaves to the {dir}"
+                }
+            }, 
+            "name": "Spawn"
+        }, 
+        "7": {
+            "desc": "The air is thick and hazy here. Through the smoke you can just barely make out walls covered in ACDC posters. \r\n \r\nA small circle of people sit around a rickety card table.", 
+            "events": {
+                "enter": [
+                    {
+                        "blacklist": [
+                            4, 
+                            11, 
+                            1, 
+                            7, 
+                            23
+                        ], 
+                        "data": {
+                            "from": "template", 
+                            "item": 15, 
+                            "type": "item"
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "verb": "create"
+                    }, 
+                    {
+                        "blacklist": [
+                            4, 
+                            11, 
+                            1, 
+                            7, 
+                            23
+                        ], 
+                        "data": {
+                            "text": "Someone slips a joint into your hand, then dissapears into the haze."
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "time": 150, 
+                        "verb": "display"
+                    }
+                ]
+            }, 
+            "exits": {
+                "north": 8
+            }, 
+            "items": [
+                27, 
+                30
+            ], 
+            "messages": {
+                "enter": {
+                    "default": "{player} joins the party!"
+                }, 
+                "exit": {
+                    "default": "{player} left."
+                }
+            }, 
+            "name": "Dorm Room"
+        }, 
+        "8": {
+            "desc": "The reek of waste hits your nose as soon as you enter the cramped space. A grimy toilet sits off to one side.", 
+            "events": {}, 
+            "exits": {
+                "south": 7
+            }, 
+            "items": [
+                20, 
+                21
+            ], 
+            "messages": {
+                "enter": {
+                    "default": "{player} enters from the {dir}"
+                }, 
+                "exit": {
+                    "default": "{player} leaves to the {dir}"
+                }
+            }, 
+            "name": "Bathroom"
+        }, 
+        "9": {
+            "desc": "2sp00py5me", 
+            "events": {
+                "enter": [
+                    {
+                        "data": {
+                            "text": "Spoop"
+                        }, 
+                        "destroy": false, 
+                        "target": "user", 
+                        "verb": "display"
+                    }
+                ]
+            }, 
+            "exits": {
+                "up": 1
+            }, 
+            "items": [], 
+            "messages": {
+                "enter": {
+                    "default": "{player} enters from the {dir}"
+                }, 
+                "exit": {
+                    "default": "{player} leaves to the {dir}"
+                }
+            }, 
+            "name": "Basement"
+        }
+    }
+}

@@ -14,7 +14,7 @@ from Queue import Empty
 import socket
 
 #Modules
-from DamageSystem import DamageSystem
+
 
 PORT = 9000
 

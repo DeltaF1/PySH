@@ -58,17 +58,17 @@ directions["void"]="void"
 
 #From Javier @ stackoverflow.com
 def num(s):
-    try:
-        return int(s)
-    except ValueError:
-        return float(s)
+	try:
+		return int(s)
+	except ValueError:
+		return float(s)
 
 #From Martijn Pieters @ stackoverflow.com
 def getFromDict(dataDict, mapList):
-    return reduce(lambda d, k: d[k], mapList, dataDict)
+	return reduce(lambda d, k: d[k], mapList, dataDict)
 
 def setInDict(dataDict, mapList, value):
-    getFromDict(dataDict, mapList[:-1])[mapList[-1]] = value
+	getFromDict(dataDict, mapList[:-1])[mapList[-1]] = value
 
 def recurseDict(dataDict, func, *args):
 	for key, value in dataDict.iteritems():
@@ -698,6 +698,13 @@ class Item(EventEntity):
 		
 		return i
 
+class NullFile:
+	def write(*args):pass
+
+	def read(*args):pass
+
+	def close(*args):pass
+
 class TextIO:
 	"""
 	A base class for all player IO operations. The sendRaw() and receive() functions are overwritten by subclasses for each specific method of IO 
@@ -1039,7 +1046,7 @@ def decodeWorld(string):
 
 	Item.class_counter = lastid + 1
 
-        #Define "fromJSON" method for Rooms, Players, Items
+		#Define "fromJSON" method for Rooms, Players, Items
 	
 	rooms = {}
 	for i in roomS:
@@ -1956,9 +1963,6 @@ class ServerThread(Thread):
 		
 		self.server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 		
-		self.host = ''
-		if len(sys.argv) > 2:
-			self.port = int(sys.argv[2])
 		
 		connect = (self.host, self.port)
 
@@ -1996,17 +2000,25 @@ class ServerThread(Thread):
 
 if __name__ == '__main__':
 	
+	sysargs = {}
+
+	for i in sys.argv[1:]:
+		parts = i.lower().strip("--").split("=")
+		sysargs[parts[0]] = parts[1]
+
 	filename = ""
-	try:filename = sys.argv[1]
-	except:pass
+	if "world" in sysargs:
+		filename = sysargs["world"]
 
-        if not filename:
-                filename = raw_input("What world file should I load? (world.json): ")
-                if filename:
-                	if not ".json" in filename:
-                		filename+=".json"
+	print "test"
+	if not filename:
+		filename = raw_input("What world file should I load? (world.json): ")
+		if filename:
+			if not ".json" in filename:
+				filename+=".json"
 
-                filename = filename or "world.json"
+		filename = filename or "world.json"
+
 	f = open(filename, "r")
 	f2 = open(filename.strip(".json")+"Backup.json", "w")
 	f2.write(f.read())
@@ -2030,7 +2042,17 @@ if __name__ == '__main__':
 
 	Event = Queue()
 
-	server = ServerThread()
+	if "port" in sysargs:
+		port = sysargs["port"]
+	else:
+		port = 9000
+
+	if ("debug" not in sysargs) or ("debug" in sysargs and sysargs["debug"] == "false"):
+		Log.logfile = NullFile()
+
+
+
+	server = ServerThread(port=port)
 
 	server.daemon = True
 

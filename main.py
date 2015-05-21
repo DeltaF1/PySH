@@ -1,3 +1,4 @@
+#!/usr/bin/python 
 import sys
 import time
 
@@ -137,6 +138,7 @@ class Timer:
 
 		return False
 
+'''
 def parseEvent(value):
 	print("Entering parse!")
 	if value and isinstance(value, basestring):
@@ -188,11 +190,25 @@ def parseEvent(value):
 				return random.randrange(p1, p2)
 
 	return value
+'''
 
 def parseEvent(line):
 	if isinstance(line, basestring):
 		
-		match = re.search(r"r(.?)\{(.*?)\}", line)
+		pattern = r"r(.?)\{(.*?)\}"
+		'''
+		Find a string that starts with r[some format character]{[data]}
+		
+		r%{a/b} or r%{c} : set to boolean, with c (a / b) chance of being True
+		r{a:b} or rf{a:b}: set to int or float, in between values a and b
+		r[a;b;...;c]     : set to random item from list, 
+		                   converting to the type specified by format
+		                   (f(loat) or i(nteger)), default of string
+		
+
+
+		'''
+		match = re.search(pattern, line)
 
 		if not match:
 			print("no matches found in (%s), going back up the stack"%line)
@@ -372,13 +388,19 @@ class EventEntity(object):
 		#Ignore Target for now. We will eventually add support for other things being tped
 		
 		destination = e["data"]["destination"]
+
+		quiet = False
 		
+		if "quiet" in e["data"] and e["data"]["quiet"]:
+			quiet = True
+
+
 		if destination in directions:
 			#We've got a valid movement
-			entity.move(destination, quiet = e["data"]["quiet"])
+			entity.move(destination, quiet = quiet)
 		else:
 			#Just a teleport to a room, specified by id
-			rooms[destination].addPlayer(entity, quiet = e["data"]["quiet"])
+			rooms[destination].addPlayer(entity, quiet = quiet)
 
 	def do_trigger(self, e, entity, *args):
 		Debug("Doing verb 'trigger'")
@@ -1192,7 +1214,7 @@ class LookCommand(Command):
 	def init(self):
 		self.name = "look"
 		self.aliases=["examine", "x"]
-		self.doc = "look or look <name> or look me"
+		self.doc = ["look","look <name>","look me"]
 	def run(self, string):
 		args=string["args"]
 		target = self.player.room
@@ -1214,12 +1236,13 @@ class LookCommand(Command):
 				
 				target=newtarget
 
-		self.player.send(target.look(self.player))
+		self.player.send(parseEvent(target.look(self.player)))
 
 class RunCommand(Command):
 	def init(self):
 		self.name="run"
 		self.level = Levels.Super
+		self.doc = "run <python code>"
 		
 	def run(self, args):
 		args = args["args"]
@@ -1261,7 +1284,7 @@ class TakeCommand(Command):
 
 				if item:
 					self.player.send("You picked up "+target.name+"!")
-					target.trigger("get", self.player)
+					target.trigger("get", self.player) 
 					self.player.inventory.append(target)
 				else:
 					self.player.send(target.messages["rooted"].format(target.name))
@@ -1291,7 +1314,7 @@ class DropCommand(Command):
 			else:
 				self.player.send("You don't have that!")
 		else:
-			self.player.send("Please supply the name of an item to drop!")
+			return "format"
 
 class UseCommand(Command):
 	def init(self):
@@ -1320,6 +1343,7 @@ class UseCommand(Command):
 				entity.trigger(string["name"], self.player, target)
 	
 running = True
+SAVE = True
 
 class StopCommand(Command):
 	def init(self):
@@ -1330,6 +1354,14 @@ class StopCommand(Command):
 		#Say that when the variable "running" is referenced in this scope, reference the global variable instead.
 		global running
 		running = False
+
+		if string["args"]:
+			option = string["args"][0]
+
+			if option == "NOSAVE":
+				global SAVE
+				SAVE = False
+
 
 class ModCommand(Command):
 	def init(self):
@@ -1444,11 +1476,15 @@ class ViewJSON(Command):
 class EmoteCommand(Command):
 	def init(self):
 		self.name = "emote"
+		self.doc = "emote <action>"
 	
 	def run(self, string):
 		args = string["args"]
 		if args:
 			self.player.room.broadcast(self.player.name+" "+' '.join(args))
+		else:
+			return "format"
+
 class TimeCommand(Command):
 	def init(self):
 		self.name = "@time"
@@ -1629,6 +1665,8 @@ class EditDescCommand(Command):
 				newdesc = self.handler.handlerArgs.desc + ' '.join(args[1:])
 			else:
 				newdesc = ' '.join(args)
+
+			newdesc = newdesc.replace(r"\n","\r\n")
 
 			self.handler.handlerArgs.setDesc(newdesc)
 
@@ -2003,8 +2041,8 @@ if __name__ == '__main__':
 	sysargs = {}
 
 	for i in sys.argv[1:]:
-		parts = i.lower().strip("--").split("=")
-		sysargs[parts[0]] = parts[1]
+		parts = i.strip("--").split("=")
+		sysargs[parts[0].lower()] = parts[1]
 
 	filename = ""
 	if "world" in sysargs:
@@ -2117,17 +2155,18 @@ if __name__ == '__main__':
 			running = False
 			break
 
+	
+	if SAVE:
+	
+		Debug("Saving world!", True)
 		
-	
-	Debug("Saving world!", True)
-	
-	f = open(filename, "w")
-	d = encodeWorld(rooms, players, login, items)
-	d["data"] = world["data"]
-	s = json.dumps(d, indent = 4, sort_keys = True)
-	f.write(s)
-	f.close()
+		f = open(filename, "w")
+		d = encodeWorld(rooms, players, login, items)
+		d["data"] = world["data"]
+		s = json.dumps(d, indent = 4, sort_keys = True)
+		f.write(s)
+		f.close()
 
-	Log.logfile.close()
+		Log.logfile.close()
 	
 	Debug("Goodbye!")
